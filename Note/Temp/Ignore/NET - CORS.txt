@@ -1,0 +1,13 @@
+NET - CORS
+
+<system.webServer>
+	<httpProtocol>
+		<customHeaders>
+			<clear />
+			<add name="Access-Control-Allow-Origin" value="http://localhost:8080" />
+			<add name="Access-Control-Allow-Methods" value="GET, PUT, POST, DELETE, HEAD, OPTIONS" />
+			<add name="Access-Control-Allow-Credentials" value="true" />
+			<add name="Access-Control-Allow-Headers" value="Origin, X-Requested-With, Content-Type, Accept, Authorization" />
+		</customHeaders>
+	</httpProtocol>
+</system.webServer>

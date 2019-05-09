@@ -1,0 +1,231 @@
+Angular - Router
+const replacer = (key, value) => (typeof value === 'function') ? value.name : value;
+console.log('Routes: ', JSON.stringify(router.config, replacer, 2));
+
+===[Routing]===
+app-routing.module.ts:
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+
+import { HeroesComponent } from './heroes/heroes.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { HeroDetailComponent } from './hero-detail/hero-detail.component';
+
+const routes: Routes = [
+	{ path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+	{ path: 'detail/:id', component: HeroDetailComponent },
+	{ path: 'heroes', component: HeroesComponent },
+	{ path: 'dashboard', component: DashboardComponent }
+];
+
+@NgModule({
+	imports: [RouterModule.forRoot(routes)],
+	exports: [RouterModule]
+})
+
+export class AppRoutingModule { }
+___________________________________
+app.module.ts:
+import { AppRoutingModule } from './app-routing.module';
+	imports: [AppRoutingModule]
+___________________________________
+app.component.html:
+<router-outlet></router-outlet>
+
+
+===[Lazy Load]===
+{
+	path: 'admin',
+	loadChildren: './admin/admin.module#AdminModule',
+}
+
+
+===[Preloading]===
+app-routing.module.ts:
+	RouterModule.forRoot(
+		routes,
+		{
+			enableTracing: true,
+			preloadingStrategy: PreloadAllModules
+		}
+	)
+-----------------------
+Custom Preloading:
+{
+	path: 'crisis-center',
+	loadChildren: './crisis-center/crisis-center.module#CrisisCenterModule',
+	data: { preload: true }
+}
+__________
+selective-preloading-strategy.service.ts:
+import { Injectable } from '@angular/core';
+import { PreloadingStrategy, Route } from '@angular/router';
+import { Observable, of } from 'rxjs';
+
+@Injectable({
+	providedIn: 'root',
+})
+export class SelectivePreloadingStrategyService implements PreloadingStrategy {
+	preloadedModules: string[] = [];
+
+	preload(route: Route, load: () => Observable<any>): Observable<any> {
+		if (route.data && route.data['preload']) {
+			this.preloadedModules.push(route.path);
+			console.log('Preloaded: ' + route.path);
+
+			return load();
+		} else {
+			return of(null);
+		}
+	}
+}
+__________
+app-routing.module.ts:
+import { SelectivePreloadingStrategyService } from './selective-preloading-strategy.service';
+	preloadingStrategy: SelectivePreloadingStrategyService
+	providers: [SelectivePreloadingStrategyService]
+
+
+------------------------------Guard------------------------------
+===[CanActivate]===
+Module: Routing
+import { AuthGuard } from '../auth/auth.guard';
+
+[...] Routes= [
+{
+	path: 'admin',
+	component: AdminComponent,
+	canActivate: [AuthGuard],
+	children: [
+		{
+			path: '',
+			children: [
+				{ path: 'crises', component: ManageCrisesComponent },
+				{ path: 'heroes', component: ManageHeroesComponent },
+				{ path: '', component: AdminDashboardComponent }
+			],
+		}
+	]
+}			]
+___________________________________
+auth.guard.ts:
+import { Injectable } from '@angular/core';
+import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
+
+import { AuthService }			from './auth.service';
+
+@Injectable({
+	providedIn: 'root',
+})
+export class AuthGuard implements CanActivate {
+	constructor(private authService: AuthService, private router: Router) {}
+
+	canActivate(
+		next: ActivatedRouteSnapshot,
+		state: RouterStateSnapshot): boolean {
+		let url: string = state.url;
+
+		return this.checkLogin(url);
+	}
+
+	checkLogin(url: string): boolean {
+		if (this.authService.isLoggedIn) { return true; }
+
+		this.authService.redirectUrl = url;
+		this.router.navigate(['/login']);
+		return false;
+	}
+}
+_____________________________________
+app.module.ts:
+import { AuthGuard } from "./auth/auth.guard";
+	providers: [AuthGuard]
+
+
+===[CanLoad]===
+auth.guard.ts:
+canLoad(route: Route): boolean {
+	let url = `/${route.path}`;
+	return this.checkLogin(url);
+}
+________________________
+app-routing.module.ts:
+{
+	path: 'admin',
+	loadChildren: './admin/admin.module#AdminModule',
+	canLoad: [AuthGuard]
+}
+
+
+===[CanDeactivate]===
+Service:
+confirm(message?: string): Observable<boolean> {
+	const confirmation = window.confirm(message || 'Is it OK?');
+	return of(confirmation);
+};
+_________________________
+can-deactivate.guard.ts: Universal
+import { Injectable } from '@angular/core';
+import { CanDeactivate } from '@angular/router';
+import { Observable } from 'rxjs';
+
+export interface CanComponentDeactivate {
+	canDeactivate: () => Observable<boolean> | Promise<boolean> | boolean;
+}
+
+@Injectable({
+	providedIn: 'root',
+})
+export class CanDeactivateGuard implements CanDeactivate<CanComponentDeactivate> {
+	canDeactivate(component: CanComponentDeactivate) {
+		return component.canDeactivate ? component.canDeactivate() : true;
+	}
+}
+__________________________
+can-deactivate.guard.ts: Specific
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { CanDeactivate,
+				 ActivatedRouteSnapshot,
+				 RouterStateSnapshot }	from '@angular/router';
+
+import { CrisisDetailComponent } from './crisis-center/crisis-detail/crisis-detail.component';
+
+@Injectable({
+	providedIn: 'root',
+})
+export class CanDeactivateGuard implements CanDeactivate<CrisisDetailComponent> {
+
+	canDeactivate(
+		component: CrisisDetailComponent,
+		route: ActivatedRouteSnapshot,
+		state: RouterStateSnapshot
+	): Observable<boolean> | boolean {
+		const id = route.paramMap.get('id');
+		const url = state.url;
+
+		if (!component.crisis || component.crisis.name === component.editName) {
+			return true;
+		}
+
+		return component.dialogService.confirm('Discard changes?');
+	}
+}
+_______________________________
+Component: Universal
+canDeactivate(): Observable<boolean> | boolean {
+	if (!this.crisis || this.crisis.name === this.editName) {
+		return true;
+	}
+	return this.dialogService.confirm('Discard changes?');
+}
+_______________________________
+Routing:
+{
+	path: ':id',
+	component: CrisisDetailComponent,
+	canDeactivate: [CanDeactivateGuard]
+}
+
+
+------------------------------Module------------------------------

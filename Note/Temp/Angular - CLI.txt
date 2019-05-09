@@ -1,0 +1,9 @@
+Angular - CLI
+npm install -g @angular/cli
+
+ng new app1
+ng serve --open
+ng build app1 -c production
+
+ng generate component|service|module name1
+ng generate module app-routing --flat --module=app

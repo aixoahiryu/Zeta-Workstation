@@ -1,0 +1,58 @@
+Angular - Firebase
+
+===[firebase.config.js]===
+import firebase from "firebase";
+
+var config = {
+	apiKey: "AIzaSyBAeZRr9p89nb9821FANWtPHC3GxnvS0og",
+	authDomain: "angular1-25780.firebaseapp.com",
+	databaseURL: "https://angular1-25780.firebaseio.com",
+	projectId: "angular1-25780",
+	storageBucket: "angular1-25780.appspot.com",
+	messagingSenderId: "461407356175"
+};
+
+const firebaseApp = firebase.initializeApp(config);
+export default firebaseApp;
+
+
+===[app.service.ts]===
+import { Injectable } from "@angular/core";
+import { Observable, of } from "rxjs";
+import firebaseApp from "./firebase.config";
+
+@Injectable()
+export class AppService {
+	constructor() {}
+
+	getLogin(username: string, password: string): Observable<any> {
+		console.log(username, password);
+		return Observable.of(
+			firebaseApp.auth().signInWithEmailAndPassword(username, password)
+		);
+	}
+
+	logout() {
+		return Observable.of(firebaseApp.auth().signOut());
+	}
+
+	userState: boolean;
+	checkLogin() {
+		var user = firebaseApp.auth().currentUser;
+		if (user) {
+			this.userState = true;
+		} else {
+			this.userState = false;
+		}
+		return Observable.of(this.userState);
+	}
+}
+
+
+===[Component]===
+import { AppService } from "../app.service";
+constructor(private appService: AppService) {}
+	result: string;
+	login(username: string, password: string) {
+		this.appService.getLogin(username, password)
+			.subscribe(	result => {	this.result = result; }	);

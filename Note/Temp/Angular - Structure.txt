@@ -1,0 +1,22 @@
+Angular - Structure
+
+src
+|	|--- app
+|		|--- common
+|		|--- service
+|			|--- auth
+|		|--- page
+|	|--- assets
+|		|--- fonts
+|		|--- js
+|		|--- styles
+|		|--- img
+|	|--- environments
+|	|--- app-routing.module.ts
+|--- main.ts
+|--- index.html
+|--- styles.css
+
+
+===[scss]===
+@import '../assets/styles/fp-styles.css';

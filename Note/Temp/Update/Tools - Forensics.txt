@@ -1,0 +1,44 @@
+Tools - Forensics
+
+.::[Analysis]::.
+DEFT	http://www.deftlinux.net/
+Maltego		CaseFile
+Encase
+X-Ways
+Forensic Tool Kit
+Prodiscover
+Turnitin
+Sleuth Kit
+FTK
+Helix
+Knoppix
+UserAssist
+index.dat
+HashClash
+http://code.google.com/p/winforensicaanalysis/
+http://www.mitec.cz
+http://support.microsoft.com/kb/927521
+InetSim
+Network Miner
+Windows Forensic Analysis Toolkit
+RegRipper http://code.google.com/p/regripper/
+Scalpel
+Volatility
+Forpix	Ghiro Digital Image Forensic Analyzer
+PEStudio
+RadioGraPhy	HiJackThis
+Memoryze
+SecureCheq
+https://github.com/mspreitz/ADEL
+Mobius Forensic Toolkit
+Binwalk
+log2timeline
+Xplico
+Viper Framework
+OpenIOC Framework
+Autorunsc.exe
+MANDIANT Red-Curtain		DensityScout		Sigcheck
+Log:
+	LogParser			Event Log Explorer		Log Parser Lizard		Visual Log Parser
+analyzeMFT.py
+Memory Analysis: Volatility		MANDIANT Redline		Volafox

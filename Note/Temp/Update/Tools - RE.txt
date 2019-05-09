@@ -1,0 +1,94 @@
+[Tools - RE]
+
+https://tuts4you.com/download/category/34//
+
+--------------------------------------------------------------------------------------
+===[RE | http://www.exetools.com/debuggers.htm ]===
+Debugger:
+	Ghidra https://github.com/NationalSecurityAgency/ghidra
+	IDA Pro
+	PE bear
+	radare https://rada.re/r/
+	Anti-Anti-Debugger Plugins
+	OllyDbg		Immunity Debugger
+	SoftICE		SyserDebugger
+	GNU Project Debugger	https://github.com/cyrus-and/gdb-dashboard
+	w32dasm
+	capstone http://www.capstone-engine.org/
+	WinDbg
+Linux/MacOS:
+	Hopper
+PE Analysis:
+	PEiD		http://peid.has.it/		CFFExplorer		RDG Packer Detector
+	TrID
+	FRET http://fret.sourceforge.net/
+	PEframe
+	PortEx Analyzer https://github.com/katjahahn/PortEx
+	Exeinfo
+	PIN Tool http://software.intel.com/en-us/articles/pin-a-dynamic-binary-instrumentation-tool
+	______
+	KANAL - Krypto Analyzer for PEiD
+	DNiD.v0.12b-Rue
+	PROTECTiON iD
+Resource Editor:
+	PE Explorer	PeStudio
+	ResHacker
+	PEtools
+Hex:
+	HxD		BinText	HexEdit http://www.catch22.net/software	Hexplorer	http://www.mitec.cz/hex.html	GHex	wxHexEditor
+	http://en.wikipedia.org/wiki/Comparison_of_hex_editors	WinHex
+Patcher:
+	dUP2 https://tuts4you.com/e107_plugins/download/download.php?view.1115
+Monitor:
+	regmon		filemon		procmon
+Sandbox:
+	Buster Sandbox Analyzer	SysAnalyzer	Cuckoo Sandbox	Malheur
+Injector:
+	Frida https://www.frida.re/
+___________________________________________
+https://github.com/kevthehermit/RATDecoders
+peepdf https://github.com/jesparza/peepdf
+Private Key:
+	RSActf https://github.com/Ganapati/RsaCtfTool
+	http://www.factordb.com/
+PE Rebuilding:
+	LordPE
+	Import REConstructor
+	PEtools
+Hook Scanner:
+	HookShark
+	PChunter		PowerTool
+
+===[Decompiler]===
+Android:
+	JDgui
+	dex2jar
+	APKtool	http://forum.xda-developers.com/member.php?u=1922851
+	APK Studio	https://github.com/vaibhavpandeyvpz/apkstudio
+	APK Decompiler	http://www.vikifortech.16mb.com/apkdecompiler.html
+	JEB https://www.pnfsoftware.com/jeb/
+	Jadx https://github.com/skylot/jadx
+	_________
+	ApkSign https://github.com/appium/sign
+Autoit:
+	Exe to au3
+.NET:
+	De4dot
+	.Net reflector		Dis#		ILSpy	JustDecompile		Reflexil
+	dnSpy https://github.com/0xd4d/dnSpy
+C:
+	Boomerang
+	Snowman https://derevenets.com/
+Flash:
+	Sothink	JPEXS	Decompile Flash Free Version		SWFRIP
+Python:
+	uncompyle2 https://github.com/wibiti/uncompyle2
+	uncompyle6 https://pypi.org/project/uncompyle6/
+VB:
+	VBReFormer
+	P32DASM
+_________________________________
+Simple Assembly Explorer
+eXeScope
+Plasma https://github.com/plasma-disassembler
+WinREPL https://github.com/zerosum0x0/WinREPL

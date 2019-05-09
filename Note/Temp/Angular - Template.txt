@@ -1,0 +1,48 @@
+Angular - Template
+
+{{var | pipe}}			{{object.property1}}
+{{employer?.companyName}}
+<input [(ngModel)]="hero.name" placeholder="name"/>
+
+<ng-container *ngFor="let Item of filterBy(order, asc)">
+			*ngIf="str.includes(search)"
+<div [ngSwitch]="hero?.emotion">
+	<app-happy-hero    *ngSwitchCase="'happy'"    [hero]="hero"></app-happy-hero>
+	<app-sad-hero      *ngSwitchCase="'sad'"      [hero]="hero"></app-sad-hero>
+	<app-unknown-hero  *ngSwitchDefault           [hero]="hero"></app-unknown-hero>
+</div>
+[ngClass]="{'active': isActive, 'disabled': isDisabled}
+[ngStyle]="dynamicStyles()"
+
+[input1]="var1"
+(emitter)="func1($event)"
+
+[innerHTML]="var1"
+[href]="http://"
+[src]="iframe"
+[routerLink]="/path"
+[routerLink]="['/crisis-center', { foo: 'foo' }]"
+
+
+===[Event]===
+(click)="function1()"
+(input)
+(keyup.enter)
+
+
+===[element.value]===
+<input #searchBox (input)="searchBox.value" />
+____________________
+*ngIf="str.includes(searchBox.value)"
+
+
+===[Attribute]===
+[class.selected]="hero === selectedHero"
+[attr.attr1]="myAriaRole"
+
+
+===[Mobile]===
+<div *ngIf="isMobile; then mobile else desktop"></div>
+
+<ng-template #desktop></ng-template>
+<ng-template #mobile></ng-template>

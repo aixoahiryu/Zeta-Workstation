@@ -1,0 +1,20 @@
+Finpal - Account
+E:\finpal_production\src\web\FinPalApp.Website
+
+Portal URL: 
+	https://test.portal.finpal.com.au/
+	https://demo.portal.finpal.com.au/
+	https://portal.finpal.com.au/
+
+CRM URL:
+	Test+ Demo : https://miplansandbox.crm5.dynamics.com/main.aspx?appid=4bf94eb0-c34c-e811-819f-e0071b67aa71#989781271
+	Production : https://miplanfp.crm5.dynamics.com/main.aspx?appid=4bf94eb0-c34c-e811-819f-e0071b67aa71#146337353
+
+Access Detail:
+	Business admin + CRM : CRMAdmin@miplan.com.au/AC@miPlan#05
+	Contact: dropbear42@msn.com/Mobi1808
+	FinPal Admin: khoi@finpal.com.au
+
+Microsoft:
+	khoi@finpal.com.au|
+	tuan@finpal.com.au|

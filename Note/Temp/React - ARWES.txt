@@ -1,0 +1,232 @@
+React - ARWES
+create-react-app arwes1
+npm install --save arwes
+
+
+===[Design]===
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { ThemeProvider, createTheme, Arwes } from 'arwes';
+
+const theme1 = {
+	color: {
+		primary: {
+			base: '#be26fc',
+			dark: '#8e1bbd',
+			light: '#c95bf6'
+		},
+		header: {
+			base: '#fc26fa',
+			dark: '#a818a7',
+			light: '#f458f2'
+		}
+	}
+};
+
+const App = () => (
+	<ThemeProvider theme={createTheme(theme1)}>
+		<Arwes>
+			<h1>My App</h1>
+			<p>A SciFi Project</p>
+		</Arwes>
+	</ThemeProvider>
+);
+ReactDOM.render(<App />, document.querySelector('#root'));
+
+
+===[Theme]===
+import { withStyles } from 'arwes';
+
+const styles1 = theme => ({
+	root: {
+		padding: [theme.padding, 0],
+		background: theme.background.primary.level0
+	},
+	title: {
+		textDecoration: 'underline'
+	}
+});
+
+const Header1 = withStyles(styles1)(({ classes, children }) => (
+	<header className={classes.root}>
+		<h1 className={classes.title}>{children}</h1>
+	</header>
+));
+
+<Header1></Header1>
+_______________________
+https://github.com/arwes/arwes/blob/master/packages/arwes/src/tools/createTheme/theme.js
+
+
+===[Animation]===
+animate: bool
+show: bool
+animation: object
+______________________
+Nested:
+<Project animate header='PROJECT' >
+	{anim => (
+		<p><Words animate show={anim.entered}>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+			sed do eiusmod tempor incididunt ut labore et dolore magna
+		</Words></p>
+	)}
+</Project>
+
+
+-------------------------------Component-------------------------------
+import { Button } from 'arwes';
+
+===[Content]===
+Button:
+	<Button>Label</Button>
+	layer='primary|secondary|header|control|success|alert|disabled'
+	onClick={() => this.onToggle()}
+
+Blockquote:
+	<Blockquote>Cyberpunk</Blockquote>
+	data-layer='success|alert|disabled'
+
+Content:
+	<Content></Content>
+
+Image:
+	<Image animate resources='./img.png'>
+		The vast universe around us
+	</Image>
+	layer='primary|secondary|header|control|success|alert|disabled'
+	loadResources={false}
+	resources={{
+		small: '/static/img/small.jpg',
+		medium: '/static/img/medium.jpg',
+		large: '/static/img/large.jpg',
+		xlarge: '/static/img/xlarge.jpg'
+	}}
+
+Table:
+	<Table
+		animate
+		headers={['Prop name', 'Type', 'Default', 'Description']}
+		dataset={[
+			['name', 'string', '\'\'', 'The base name of the component'],
+			['age', 'number', '0', 'The age of the component'],
+			['married', 'bool', 'false', 'If the component is married'],
+		]}
+	/>
+
+Code:
+	<Code animate></Code>
+	type='code|pre'
+	language='javascript'
+		https://prismjs.com/#supported-languages
+	show={false}
+
+
+===[Container]===
+Frame:
+	<Frame animate level={1} corners={3}>
+		<p>An SciFi Project</p>
+	</Frame>
+	layer='primary|secondary|header|control|success|alert|disabled'
+	show={false}
+	border={false}
+	level={0|1|2|3}
+	corners={0|1|2|3|4|5|6}
+
+
+Project:
+	<Project animate header='Arwes'>
+		Futuristic Sci-Fi and Cyberpunk Graphical
+		User Interface Framework for Web Apps
+	</Project>
+	headerSize='h1|h2|h3|h4|h5|h6'
+	icon='' | icon={<i className='mdi mdi-package' />}
+		https://cdn.materialdesignicons.com/1.1.34/
+
+Arwes:
+	<Arwes animate background='/static/img/background.jpg' pattern='/static/img/glow.png'>
+	</Arwes>
+	background={{
+		small: '/static/img/small.jpg',
+		medium: '/static/img/medium.jpg',
+		large: '/static/img/large.jpg',
+		xlarge: '/static/img/xlarge.jpg'
+	}}
+
+Grid:
+	<Row>
+		<Col s={12} l={6}>First</Col>
+		<Col s={12} l={6}>Second</Col>
+		<Col s={12} l={6} offset={['l3']}>Third</Col>
+	</Row>
+	<Row col s|m|l|xl={12}>
+		<p>App Content</p>
+	</Row>
+	noGutter={true}
+	offset=['m4', 'l2']
+
+Header|Footer:
+	<Header|Footer animate></Header|Footer>
+
+
+------------------------------Misc------------------------------
+===[Sound]===
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { ThemeProvider, createTheme, SoundsProvider, createSounds, Button } from 'arwes';
+
+const mySounds = {
+	shared: { volume: 1, },
+	players: {
+		click: {
+			sound: { src: ['/sound/click.mp3'] }
+		},
+		typing: {
+			sound: { src: ['/sound/typing.mp3'] },
+			settings: { oneAtATime: true }
+		},
+		deploy: {
+			sound: { src: ['/sound/deploy.mp3'] },
+			settings: { oneAtATime: true }
+		},
+	}
+};
+
+const App = () => (
+	<ThemeProvider theme={createTheme()}>
+		<SoundsProvider sounds={createSounds(mySounds)}>
+			<Button animate>Click me</Button>
+		</SoundsProvider>
+	</ThemeProvider>
+);
+ReactDOM.render(<App />, document.querySelector('#root'));
+___________________________________
+Custom:
+const mySounds = {
+	players: {
+		alert: {
+			sound: { src: ['/sound/alert.mp3'] }
+		},
+	}
+};
+
+const MyButton = withSounds()(props => (
+	<Button
+		onClick={props.sounds.alert.play()}
+		{...props}
+	/>
+));
+
+const App = () => (
+	<ThemeProvider theme={createTheme()}>
+		<SoundsProvider sounds={createSounds(mySounds)}>
+			<MyButton animate>Alert!</MyButton>
+		</SoundsProvider>
+	</ThemeProvider>
+);
+
+
+===[Puff]===
+<Puffs style={{ width: '100%', height: 500 }} />
+	puffInterval={5000}
+	quantity={8}

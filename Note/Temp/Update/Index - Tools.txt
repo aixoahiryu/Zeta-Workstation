@@ -1,0 +1,11 @@
+#Index - Tools
+
+
+-----------------------------------------------------------------------------
+
+===[Hacking]===			Extended: [Tools - Hacking], /X/Hacking/Tools
+Fuzzing: AFL, Sulley, WebScarab, Minifuzz
+Misc: EyeWitness.py
+
+===[RE]===			Extended: [Tools - RE], /X/RE
+PE: PeStudio, PE Explorer, CFF Explorer

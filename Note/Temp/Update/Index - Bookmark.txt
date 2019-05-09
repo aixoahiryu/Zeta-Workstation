@@ -1,0 +1,48 @@
+#Index - Bookmark
+
+-------------------------------Update-------------------------------
+Lorem Ipsum:
+	http://loremgibson.com/
+
+
+WebDeveloper:
+	Shell:
+		Front-end:
+			https://jsfiddle.net
+			https://codepen.io/
+		Back-end:
+			https://stackblitz.com/
+			https://codesandbox.io/
+			PHP https://3v4l.org/
+
+
+===[Piracy]===
+Video:
+	http://scr.cr/		https://www.moviesjoy.net/		http://www.phimmoi.net/
+	https://www2.gogoanime.io/		http://watchcartoononline.eu/
+	https://www.reddit.com/r/TTVreborn/
+
+Web-based: https://free-proxy-list.net/web-proxy.html
+-------------------------------Add-------------------------------
+Host:
+	Sync:
+		https://mega.nz/
+		https://drive.google.com/drive/my-drive
+		https://onedrive.live.com/
+		https://www.box.com/
+		https://www.dropbox.com/
+		https://disk.yandex.com/
+	p2p:
+		https://syncthing.net/
+		https://librevault.com/
+	File:
+		https://www.mediafire.com/
+	Large File:
+		https://send.firefox.com/
+		https://transfer.pcloud.com/
+		https://wetransfer.com/
+
+NetTools:
+	Archive:
+		https://archive.org/
+		https://archive.is/

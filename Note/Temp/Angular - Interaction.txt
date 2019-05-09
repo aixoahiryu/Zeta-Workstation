@@ -1,0 +1,86 @@
+Angular - Interaction
+
+===[@Input]===
+@Input() item1: Item;
+_________________________
+parent: html
+	[item1]="Item"
+
+
+===[@Output]===
+@Output() count = new EventEmitter<number>();
+
+	sendCount(c: number) {
+		this.count.emit(c);
+	}
+_________________________
+<a href="#" (click)="sendCount(1)">Add to cart</a>
+_________________________
+parent: html
+	(count)="onCount($event)"
+_________________________
+parent: ts
+count: number = 0;
+	onCount(c: number) {
+		this.count += c;
+	}
+
+
+===[GET]===
+import { ActivatedRoute } from '@angular/router';
+constructor(private route: ActivatedRoute){ }
+
+const id = +this.route.snapshot.paramMap.get('id');
+this.router.url === "/path";
+
+
+===[Data Binding]===
+<input [(ngModel)]="hero.name" placeholder="name"/>
+____________________
+app.module.ts:
+import { FormsModule } from '@angular/forms';
+	imports: [FormsModule]
+
+
+===[ViewChild]===
+@ViewChild(ChildComponent) child;
+__________________________________________________________
+
+
+===[Service]===
+data.service.ts:
+import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
+
+@Injectable()
+export class DataService {
+
+	private messageSource = new BehaviorSubject('default message');
+	message1 = this.messageSource.asObservable();
+
+	constructor() { }
+
+	setMessage(message: string) {
+		this.messageSource.next(message)
+	}
+}
+_______________________________
+import { Component, OnInit } from '@angular/core';
+import { DataService } from "../data.service";
+
+@Component({
+	selector: 'app-parent',
+	template: `
+		{{message}}
+	`,
+	styleUrls: ['./sibling.component.css']
+})
+export class ParentComponent implements OnInit {
+
+	message:string;
+
+	constructor(private data: DataService) { }
+	ngOnInit() {
+		this.data.message1.subscribe(message => this.message1 = message)
+	}
+}

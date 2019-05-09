@@ -1,0 +1,5 @@
+Angular - Security
+
+===[Bypass Sanitizer]===
+constructor(private sanitizer: DomSanitizer){ }
+	this.trustedUrl = sanitizer.bypassSecurityTrustUrl|Html|Script|Style|ResourceUrl(this.dangerousUrl);}

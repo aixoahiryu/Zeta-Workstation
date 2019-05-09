@@ -1,0 +1,175 @@
+Angular - Internationalization
+http://angular-translator.elol.fr/en/
+
+message.xlf
+message.fr.xlf
+
+===[app.module.ts]===
+import { registerLocaleData } from '@angular/common';
+import localeFr from '@angular/common/locales/fr';
+registerLocaleData(localeFr, 'fr');
+
+===[CLI]===
+ng xi18n --output-path src/locale
+	--i18n-format=xlf|xlf2|xmb
+______________________________________
+Serve[ES]: ng serve --aot --i18n-file=src/i18n/messages.es.xlf --locale=es --i18n-format=xlf
+______________________________________
+Subdirectory[Linux/MacOS]:
+for lang in es en fr; do \
+    ng build --output-path=dist/$lang \
+             --aot -prod --bh /$lang/ \
+             --i18n-file=src/i18n/messages.$lang.xlf \
+             --i18n-format=xlf \
+             --locale=$lang; \
+done
+______________________________________
+Subdirectory[Windows]:
+ng build --output-path=dist/fr --aot -prod --bh /fr/ --i18n-file=src/i18n/messages.fr.xlf --i18n-format=xlf --locale=fr
+ng build --output-path=dist/es --aot -prod --bh /es/ --i18n-file=src/i18n/messages.es.xlf --i18n-format=xlf --locale=es
+ng build --output-path=dist/en --aot -prod --bh /en/ --i18n-file=src/i18n/messages.en.xlf --i18n-format=xlf --locale=en
+
+
+<h1 i18n="site header|An introduction header for this sample">Hello i18n!</h1>
+
+===[ID]===
+<h1 i18n="@@introductionHeader">Hello i18n!</h1>
+________________________
+<trans-unit id="introductionHeader" datatype="html">
+	<source>Hello</source>
+	<target state="new">Bonjour</target>
+</trans-unit>
+
+
+===[Attribute Translation]===
+<img [src]="logo" i18n-title title="Angular logo" />
+
+
+===[Pluralization]===
+<span i18n>Updated {minutes, plural, =0 {just now} =1 {one minute ago} other {{{minutes}} minutes ago}}</span>
+<span i18n>The author is {gender, select, male {male} female {female} other {other}}</span>
+
+
+--------------------------------Subdirectory--------------------------------
+===[.htaccess]===
+<VirtualHost *:80>
+  ServerName www.myapp.com
+  DocumentRoot /var/www
+  <Directory "/var/www">
+    RewriteEngine on
+    RewriteBase /
+    RewriteRule ^../index\.html$ - [L]
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule (..) $1/index.html [L]
+    RewriteCond %{HTTP:Accept-Language} ^fr [NC]
+    RewriteRule ^$ /fr/ [R]
+    RewriteCond %{HTTP:Accept-Language} ^es [NC]
+    RewriteRule ^$ /es/ [R]
+    RewriteCond %{HTTP:Accept-Language} !^es [NC]
+    RewriteCond %{HTTP:Accept-Language} !^fr [NC]
+    RewriteRule ^$ /en/ [R]
+  </Directory>
+</VirtualHost>
+
+===[Bonus: Link]===
+app.component.ts:
+import { Component, LOCALE_ID, Inject } from '@angular/core';
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+  languages = [
+    { code: 'en', label: 'English'},
+    { code: 'es', label: 'Español'},
+    { code: 'fr', label: 'Français'}
+  ];
+  constructor(@Inject(LOCALE_ID) protected localeId: string) {}
+}
+_____________________________
+app.component.html:
+<template ngFor let-lang [ngForOf]="languages">
+  <span *ngIf="lang.code !== localeId">
+    <a href="/{{lang.code}}/">{{lang.label}}</a> </span>
+  <span *ngIf="lang.code === localeId">{{lang.label}} </span>
+</template>
+
+
+--------------------------------Compile--------------------------------
+===[AOT|angular.json]===
+Development: ng serve --configuration=fr
+"build": {
+  ...
+  "configurations": {
+    ...
+    "fr": {
+      "aot": true,
+      "outputPath": "dist/my-project-fr/",
+      "i18nFile": "src/locale/messages.fr.xlf",
+      "i18nFormat": "xlf",
+      "i18nLocale": "fr",
+      ...
+    }
+  }
+},
+"serve": {
+  ...
+  "configurations": {
+    ...
+    "fr": {
+      "browserTarget": "*project-name*:build:fr"
+    }
+  }
+}
+___________________________________________________
+Production: ng build --prod --i18n-file src/locale/messages.fr.xlf --i18n-format xlf --i18n-locale fr
+...
+"architect": {
+  "build": {
+    "builder": "@angular-devkit/build-angular:browser",
+    "options": { ... },
+    "configurations": {
+      "fr": {
+        "aot": true,
+        "outputPath": "dist/my-project-fr/",
+        "i18nFile": "src/locale/messages.fr.xlf",
+        "i18nFormat": "xlf",
+        "i18nLocale": "fr",
+        "i18nMissingTranslation": "error",
+      }
+// ...
+"serve": {
+  "builder": "@angular-devkit/build-angular:dev-server",
+  "options": {
+    "browserTarget": "my-project:build"
+  },
+  "configurations": {
+    "production": {
+      "browserTarget": "my-project:build:production"
+    },
+    "fr": {
+      "browserTarget": "my-project:build:fr"
+    }
+  }
+},
+
+
+===[JIT]===
+main.ts:
+import { enableProdMode, TRANSLATIONS, TRANSLATIONS_FORMAT } from '@angular/core';
+-------
+declare const require;
+const translations = require(`raw-loader!./locale/messages.fr.xlf`);
+ 
+platformBrowserDynamic().bootstrapModule(AppModule, {
+  providers: [
+    {provide: TRANSLATIONS, useValue: translations},
+    {provide: TRANSLATIONS_FORMAT, useValue: 'xlf'}
+  ]
+});
+_____________________________________
+app.module.ts:
+import { LOCALE_ID, NgModule } from '@angular/core';
+	providers: [ { provide: LOCALE_ID, useValue: 'fr' } ]

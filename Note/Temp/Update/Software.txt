@@ -1,0 +1,359 @@
+[Software]
+
+LeakScanner
+WinLaunch		Ipadian
+http://antimatter15.com/ajaxanimator/wave/
+RPG maker XP
+GitHub
+MovieScanner
+Chaotica
+FreeNAS
+Remastersys
+FaceRig
+DrasticTreemap	Flaremap	HiveOnDemand	Macrofocus	Spotfire	Datawatch	MagnaView	TABLEAU
+Zotero
+VBlib
+
+.::[Utility]::.
+PDF:
+	Foxit	PDF-XChange		PDF Eraser
+	K2pdfopt
+Camcorder:
+	Open Broadcaster Software
+	CamStudio		FlashBackPro		Acala Screen Recorder		Recordit
+	OBS		Bandicam		Fraps	ShadowPlay	Camtasia
+Tutorial Screenshot:
+	StepShot		SnapInstall
+Text Editor:
+	HxD		BinText	HexEdit http://www.catch22.net/software	Hexplorer	http://www.mitec.cz/hex.html	GHex	wxHexEditor
+	http://en.wikipedia.org/wiki/Comparison_of_hex_editors	WinHex
+	Notepad++		Large Text file viewer
+Language:
+	Lingoes
+	KanjiTomo	Rikaichan		Tagaini Jisho
+	Keyman
+Text Expansion:
+	Texter		PhraseExpress		Breevy	aText	PhraseExpander	FastKeys
+Launcher:
+	Add2Run
+	Splat	http://skwire.dcmembers.com/fp/?page=splat
+	Find and Run Robot
+Clipboard:
+	CopyQ		Clipboard History		Free Clipboard Manager
+Large Image:
+	Google Maps Image Cutter		Deep Zoom Composer
+Converter: DocuFreezer
+Document:
+	Sphinx docs
+	LyX https://www.lyx.org/
+	http://wri.tt/
+Mouse: Neat Mouse		Feel The Wheel
+____________________________________________________
+Symlink Helper
+http://www.romeolight.com/products/cp1/
+Ultimate Settings Panel
+CoreUtils		Pandoc
+Universal_ADB-Helper	https://www.dropbox.com/sh/zdzo3n5q8tnkozq/AAD4cSQRVuMD5cfUOWJ3X8LMa?dl=0
+WhatPulse
+
+.::[Netools]::.
+DNS:
+	Dnsmasq
+	DNS Switch	http://dns-switch.chris-pc.com/
+	DNS Jumper
+	DNScrypt https://dnscrypt.info/
+	Namebench
+p2p Distribution:
+	uTorrent	Vuze	Deluge	Xunlei	Tixati	BitComet	Transmission-qt	rTorrent
+	qBittorrent	kTorrent	https://en.wikipedia.org/wiki/Comparison_of_BitTorrent_clients
+	Tribler	BitLord	FrostWire
+	https://github.com/ziahamza/webui-aria2
+	Bit Che		https://www.furk.net/search
+	MLDonkey	aMule	eMule
+TV:
+	Popcorn Time		Kodi		XBMC	Stremio	TorrentTV	Fetchr	Peerflix
+Channel Bonding:
+	Dispatch-Proxy	Speedify
+Mirror:
+	HTTrack		Offline Explorer		WebCopier	Webpage Clone Maker	WebZIP	Web Downloader	SuperBot
+	Kiwix
+Message:
+	Bitmessage
+	µTox
+	Trillian
+	TorChat https://github.com/prof7bit/TorChat
+Note:
+	Resophnotes		Evernote		Onenote
+	Fetchnotes		wikidPad		Cintanote	Gumnote
+Debug:
+	URL Snooper
+	rtmpdump
+FTP:
+	FileZilla		CuteFTP
+	Putty
+Remote Desktop:
+	Teamviewer		TightVNC		R.desktop	Join.me		LogMeIn		UltraVNC		Mikogo	Splashtop
+	RealVNC
+	x11vnc http://goo.gl/nzI9b
+	ThinLinc
+	ScreenTask
+Download Manager:
+	IDM		Eagle get		Download Ninja
+Adblocker: Ad muncher
+Screenshot:
+	LightShot		GreenShot	Gyazo	Snagit	Skitch	ShareX		TinyTake		Screenshot Captor
+	Monosnap	puush	KSnapshot	Shutter
+	EyeWitness.py https://github.com/FortyNorthSecurity/EyeWitness
+File:
+	Jumpshare
+	CrashPlan	AeroFS		SelfCloud		BitTorrent Sync	Syncthing	Storj
+	Boxcryptor	Cloudfogger	CryptSync	Secryptor	Filelize
+	ZOOM	http://z-o-o-m.eu/
+	FreeFileSync
+Webcam:
+	ManyCam		SplitCam
+	iCam		WebcamXP		Yawcam		VitaminD		Sighthound
+Network Monitor:
+	NetBalancer
+	Xirrus Wi-Fi Inspector		LizardSystems Wi-Fi Scanner
+	inSSIDer
+	Look@LAN
+	Total network monitor	networx		NetLimiter	FreeMeter	GlassWire
+	ntopng
+	Capsa
+APK Downloader:
+	https://github.com/onyxbits/raccoon4
+Private Cloud: Autistici/Inventati		NextCloud
+Cloud Explorer:
+	Air Explorer		Cyberduck		NetDrive
+Decentralized:
+	https://zeronet.io/		https://www.ethereum.org/
+__________________________________________________
+TEK:Time Equals Knowledge
+Clipboard RDC
+Connectify
+Commotion
+Proxyfire		Privoxy
+HTTP Prompt
+
+.::[Audio]::.
+Spectrogram 5.0
+Coagula
+IRIS - Interactive Realtime Image Synthesizer
+Photosounder
+Cool Edit
+WavePad
+IndieVolumn
+MIDITrail
+GoldWave		JVVLXCKQ8|3S5S5EL45
+Audacity
+Freecorder	MP3myMP3 Recorder	MP3DirectCut	Replay Radio
+
+.::[System]::.
+Terminal:
+	ConEmu		cmder		Babun
+Ram Disk:
+	RAMdisk		ImDisk Toolkit
+Repair:
+	GEGeek Tech Toolkit
+	ShellExView
+	KMSpico
+Spec:
+	CPUz	GPUz	MSI Afterburner	Speccy
+	CoreTemp		AIDA64		BatteryInfoView		Memtest86	lavalys Everest
+Explorer:
+	Xplorer2
+	Dexpot		Desktops.exe
+	Clover	http://ejie.me/
+	BrightExplorer
+	DisplayFusion
+Automation:
+	Do it again	TaskRobot	RoboTask
+Customization:
+	Rainmeter	NimiVisual	WindowBlind		WindowFX
+Uninstaller:
+	RevoUninstaller	YourUninstaller	IObitUninstaller
+Security:
+	Preyproject
+	KeePass
+	fSekrit
+	XueTr	PowerTool	Process Hacker 2		ProceXP		YAPM	AnVir Task Manager	KillSwitch
+	RootRepeal	PCHunter		SpyShelter
+	PGP Desktop
+	TCPView
+	NTFS_Permissions_Explorer
+	EMET | Enhanced Mitigation Experience Toolkit
+	Regshot		ProcessMonitor
+Malware:
+	herdProtect	CrowdInspect
+	Malwarebytes Anti-Exploit
+	Sandboxie		Sigcheck
+	PHP Sandbox
+	Joe Sandbox	AirGap
+	CWsandbox
+	http://opennebula.org/tryout/sandbox-testdrive/
+	KeyScrambler
+	PrivaZer
+Cleaner:
+	Ccleaner		AdwCleaner	Comodo System-Cleaner
+Boot USB:
+	UNetbootin	Win32 Disk Imager		LinuxLive USB Creator	SUSE Studio ImageWriter
+	Rufus https://rufus.ie/
+MAC Address:
+	Smac	MadMacs		SpoofMAC https://github.com/feross/SpoofMAC
+Installer:
+	http://ninite.com/
+	Windows Post-Install Wizard		AutoPlay Media Studio
+Product Key:
+	RecoverKeys		ProduKey		Magical Jelly Bean KeyFinder		Product Key Explorer	Product key finder
+Log:
+	LogParser		Event Log Explorer		Log Parser Lizard		Visual Log Parser
+Privilege:
+	ProcDump	PSexec
+	GFLAGS.EXE
+Time Machine:
+	Deep Freeze		Shadow Defender
+	ToolWiz	Reboot Restore RX	Windows SteadyState
+____________________________
+ZoomIt
+Steam	OnLive
+KeyTweak
+RAMmap
+.::[File]::.
+Archive:
+	7zip		Winrar
+	KGB		B1	PeaZip	WinZip
+	Universal Extractor
+Ghost:
+	OnekeyGhost
+	GhostExplorer		System Restore Explorer
+	Acronis True Image		Norton Ghost	AOMEI Backupper	Macrium Reflect	Clonezilla		Mandriva
+	Redo Backup and Recovery	Time Machine		Carbon Copy Cloner
+File Visualizer:
+	SpaceSniffer		SPYGLASS		WinDirStat	TreeSize Free		RidNacs
+	Folder Size		Xinorbis			GetFolderSize	JDiskReport		MeinPlatz
+	Folder Size Explorer	http://en.wikipedia.org/wiki/List_of_treemapping_software
+	Disktective	Free Disk Usage Analyzer	Steffen Scanner
+Disk Image:
+	UltraISO		PowerISO	Alcohol 120%	DAEMON Tools		Gizmo Drive	MagicISO		Nero		Virtual CloneDrive
+Encryption:
+	TrueCrypt	AxCrypt		Privacy Drive		VeraCrypt	tcplay	DiskCryptor	AES Crypt	GnuPG
+	TCnext		https://truecrypt.ch/
+	encfs
+	Quick Crypt
+	WinTrezur
+Automation:
+	File monkey
+MacOS:
+	Paragon NTFS
+	MacDrive		HFS+ for Windows		HFSExplorer
+File Organizaion:
+	TagSpaces	TMSU
+	Hddb	Everything Search Engine	MasterSeeker		Rummage		http://www.x1.com/	WinGREP
+	Tiny Deduplicator	dupeGuru		SearchMyFiles		doubles.sourceforge.net	Duplicate Commander	Auslogics
+	Duplicate File Finder	Easy Duplicate Finder	DoubleKiller	Duplicate Radar	Exact Duplicate Finder
+	DupliFinder	VisiPics	Anti-Twin	Similar Image Finder	Similar Picture Find
+	Awesome Duplicate Photo Finder	Image Search Pony	Similar Image Search
+	http://en.wikipedia.org/wiki/List_of_duplicate_file_finders
+Monitor:
+	Moo0 File Monitor
+Identify:
+	TrID
+	FRET http://fret.sourceforge.net/
+Image:
+	EXIF ReName		Namexif
+	XnView	IrfanView
+Directory Listing:
+	MiTec Dirlist
+	InDeep File List Maker	Filelist Creator		Directory Printer	Directory List & Print
+_________________________________________________
+ShadowExplorer
+PiFS https://github.com/philipl/pifs
+IPFS https://ipfs.io/
+
+.::[Converter]::.
+OCR:
+	ABBYY FineReader
+Media:
+	FormatFactory
+Image:
+	Caesium		Radical Image Optimization Tool		Voralent Antelope
+Document:
+	DocuFreezer		Pandoc
+Rip:
+	AutoGK		StaxRip		HandBrake	MakeMKV		DVDfab
+Encoder:
+	THandBrake	HB Batch Encoder Mk2
+	MediaCoder		Vitualdub Mod		MeGUI
+
+.::[DRM removal]::.
+Calibre|DeDRM
+SoundTaxi	Tunebite	NoteBurner	MuvAudio
+freeme2
+
+.::[Media]::.
+3D:
+	3DS Max
+	ZBrush		Blender
+Animation:
+	Maya	TVpaint	AfterEffect
+	Easy GIF Animator
+	VideoScribe		Explaindio
+Video:
+	Lightworks
+	Sony Vegas		Aegisub		Adobe Premiere Pro	Proshow Producer		AVID
+Image:
+	PhotoScape		PhotoMarks
+	Photoshop	GIMP	Pixelmator	Paint.NET	Lightroom	Pixlr
+	Pyxel Edit	GraphicsGale	Aseprite	Pixen	Cube Kingdom http://cubekingdom.web.fc2.com/
+	FantaMorph	FotoMorph	FaceMorpher
+	Icecream Image Resizer
+	Illustrator			Affinity Designer
+Customization:
+	Restorator 2009	ResHacker
+Automated:
+	XiuxiuMeitu		Cyberlink Color Director
+Icon:
+	Icons From File	resourcesextract	IcoFX
+	icontweaker
+Viewer:
+	FastRawViewer
+	Mideo http://medio.storyboardlabs.net/
+________________________________________
+ComiPo!
+
+.::[G]::.
+Hook:
+	ITH		AGTH
+	Sleephook
+	DXWnd	D3DWindower
+Translator:
+	Translation Aggregator		ATLAS Fujitsu
+Booster:
+	Razer Game Booster	3D-Analyze	SwiftShader
+	Latency Optimizer	Jetboost	Game Fire	IObit Game Booster
+	HiAlgoBOOST|SWITCH|CHILL		SweetFX
+Misc:
+	AppLocale
+
+
+===[Online]===
+http://www.google.com/searchbyimage?image_url=
+https://chart.googleapis.com/chart?chs=250x250&cht=qr&chl=
+http://www.yougetsignal.com/tools/web-sites-on-web-server/?remoteAddress=
+https://developers.google.com/speed/libraries/devguide
+http://www.zamzar.com/url/		https://www.online-convert.com/
+http://lmgtfy.com/?q=
+http://www.google.com/search?q=
+http://mini.site-shot.com/1024x768/300/jpeg/?
+http://dontknow.me/at?
+https://ssl.gstatic.com/dictionary/static/sounds/de/0/WORD.mp3
+api.qrserver.com/v1/create-qr-code/?color=000000&bgcolor=FFFFFF&data=
+https://chart.googleapis.com/chart?chs=250x250&cht=qr&chl=
+http://coolrom.com/dlpop.php?id=
+.::[Proxy]::.
+http://translate.google.com/translate?sl=ja&tl=en&u=
+http://www.google.ie/gwt/x?u=
+http://www.gmodules.com/ig/proxy?url=
+https://script.google.com/macros/s/AKfycbxR5IjDwH7--kdFa2ADLF9jaGlEdutsDeU5lQco2nTHNN9-fXwy/exec
+http://www.proxy4free.com/

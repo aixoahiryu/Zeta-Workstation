@@ -1,0 +1,18 @@
+JS - Data
+
+filterBy(prop: string, asc: string) {
+	if (asc == "asc")
+		return this.Items.sort((a, b) =>
+			a[prop] > b[prop] ? 1 : a[prop] === b[prop] ? 0 : -1
+		);
+	else if (asc == "desc")
+		return this.Items.sort((a, b) =>
+			a[prop] < b[prop] ? 1 : a[prop] === b[prop] ? 0 : -1
+		);
+}
+_________________
+*ngFor="let Item of filterBy(order, asc)"
+
+
+array.slice(1,5)
+array.map((v) => 2*v)

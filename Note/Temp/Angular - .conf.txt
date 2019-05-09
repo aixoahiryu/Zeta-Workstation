@@ -1,0 +1,32 @@
+Angular - .conf
+
+===[Build CLI]===
+npm run build-i18n
+package.json:
+{
+	"scripts": {
+		"build-i18n:fr": "ng build --output-path=dist/fr --aot -prod --bh /fr/ --i18n-file=src/i18n/messages.fr.xlf --i18n-format=xlf --locale=fr",
+		"build-i18n:es": "ng build --output-path=dist/es --aot -prod --bh /es/ --i18n-file=src/i18n/messages.es.xlf --i18n-format=xlf --locale=es",
+		"build-i18n:en": "ng build --output-path=dist/en --aot -prod --bh /en/ --i18n-file=src/i18n/messages.en.xlf --i18n-format=xlf --locale=en",
+		"build-i18n": "npm run build-i18n:en && npm run build-i18n:es && npm run build-i18n:fr"
+	}
+}
+
+
+===[Proxy]===
+proxy.conf.json:
+{
+	"/api": {
+		"target": "http://localhost:3000",
+		"secure": false
+	}
+}
+________________________
+angular.json:
+"architect": {
+	"serve": {
+		"builder": "@angular-devkit/build-angular:dev-server",
+		"options": {
+			"browserTarget": "your-application-name:build",
+			"proxyConfig": "src/proxy.conf.json"
+		},

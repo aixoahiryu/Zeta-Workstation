@@ -1,0 +1,77 @@
+Angular - Base
+platformBrowserDynamic().bootstrapModule(AppModule);
+
+===[Component]===
+com1.component.html:
+com1.component.css:
+com1.component.ts:
+import { Component, OnInit, Input, EventEmitter, Output } from "@angular/core";
+import { Item } from "../item";
+
+@Component({
+	selector: "app-com1",
+	templateUrl: "./com1.component.html",
+	styleUrls: ["./com1.component.css"]
+})
+export class Com1Component implements OnInit {
+	title = "Component 1";
+	ngOnInit() {}
+
+}
+___________________________________
+app.module.ts:
+import { Com1Component } from "./com1/com1.component";
+	declarations: [AppComponent, Com1Component]
+
+
+===[Model]===
+export class Item {
+	title: string;
+	price: number;
+}
+
+
+===[Service]===
+message.service.ts
+import { Injectable } from '@angular/core';
+
+@Injectable({
+	providedIn: 'root'
+})
+export class MessageService {
+	messages: string[] = [];
+ 
+	add(message: string) {
+		this.messages.push(message);
+	}
+ 
+	clear() {
+		this.messages = [];
+	}
+}
+___________________________________
+DI:
+import { MessageService } from './message.service';
+	constructor(private messageService: MessageService) { }
+___________________________________
+app.module.ts:
+import { AppService } from "./app.service";
+	providers: [AppService]
+
+
+===[Module]===
+module1.module.ts:
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+
+@NgModule({
+	imports: [
+		CommonModule
+	],
+	declarations: []
+})
+export class Module1 { }
+___________________________________
+app.module.ts:
+import { Module1 } from './module1.module';
+	imports: [Module1]
