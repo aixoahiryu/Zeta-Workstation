@@ -1,0 +1,12 @@
+Toolbar menu, Process Hacker, Core Temp, PChunter
+Tiling: ZLlaunch, Python3
+
+Browser: Extension, ZL-Darkmode
+Note: Sublime, Notepad++
+Utility: MPV, Irfanview, SumatraPDF, CopyQ, AIMP, Links2
+
+Deploy: Cygwin, Notepad++, Git, Backup
+Scraps: RSN, CopyQ
+File: Resource, Bookmark, Music, E, F
+
+[ Vivaldi Chromium ] [ Cygwin Notepad++ MPV Irfanview ] |
